@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jslib.min.js"></script>
+    <script src="./hotel.js"></script>
+    <title>Document</title>
+    <style>
+            div.gallery {
+              margin: 5px;
+              border: 1px solid #ccc;
+              float: left;
+              width: 250px;
+            }
+            
+            div.gallery:hover {
+              border: 1px solid #777;
+            }
+            
+            div.gallery img {
+              width: 100%;
+              height: auto;
+            }
+            
+            div.desc {
+              padding: 5px;
+              height: auto;
+              text-align: center;
+            }
+            #leftsection{
+              background-color: red;
+              height: 100%;
+              max-width: fit-content;
+              position: absolute;
+            }
+            
+
+        </style>
+</head>
+<script>
+
+  const foodRepo=new Customer();
+
+    
+  function addMyOrder(){
+    const item=$(".inpItem").val();
+    const quantity=$("#inpQuantity").val();
+    console.log(item,quantity);
+    const data=foodRepo.orderFood(new Hotel(item,quantity));
+    alert("data added")
+
+    
+  }
+  function createData(){
+  // foodRepo.orderFood(new Hotel("set dosa",1));
+  // foodRepo.orderFood(new Hotel("masala dosa",2));
+  // foodRepo.orderFood(new Hotel("butter dosa",3));
+  // foodRepo.orderFood(new Hotel("open dosa",4));
+
+  }
+
+  function populate(data){
+            $("table").find("tr:gt(0)").remove();
+            $.each(data,(index,i) => {
+                const row = `<tr>
+                    <td>${i.id}</td>
+                    <td>${i.item}</td>
+                    <td>${i.qunt}</td>
+                    <td>${totalamount}</td>
+                    `;
+                $("table").append(row);
+            });
+  }
+  function onOrderDisplay(){
+            $(".container").children("div").hide();
+            $(".container").children("div:first").show(2000);
+            
+            //createData();
+            data = foodRepo.getAllOrder();
+            console.log(data);
+            // // alert(totalamount)
+            // populate(data);
+            
+            if(data.length == 0){
+                alert("not found");
+            }else{
+                populate(data);
+            }
+  }
+
+
+ function init(){
+     
+      $(".addOrder").click(addMyOrder);
+      $("#myOrder").click(onOrderDisplay);
+      //$("#Cancel").click(onCancel);
+  }
+
+  $(document).ready(init);
+</script>
+<body>
+    <h1>MY HOTEL</h1>
+    <hr>
+<div>
+
+
+  <section id="leftsection">
+    <button id="myOrder">My Order</button>
+  <div class="container">
+    
+    <table >
+      <tr>
+        <th>Item NO</th>
+        <th>Item</th>
+        <th>Quatity</th>
+        <th>Item Price</th>
+
+      </tr>
+    </table>
+  </div>
+</section>
+
+    <!-- ---------------------------------------------- -->
+<section id="rightsection">
+    <div>
+        
+        <div class="gallery">
+                <a target="_blank" href="./img/butter.jfif">
+                  <img src="./img/butter.jfif" alt="Cinque Terre" width="600" height="400">
+                </a>
+                <div class="desc">
+                    <p><input type="checkbox" id="inpItem" name="set dosa" value="Set Dosa" id="SetDosa"><b>Set Dosa</b></p><br><p>Quantity :<input type="number" id="inpQuantity"></p>
+                    <p><button class="addOrder">AddItem</button></p>
+                </div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="./img/butter.jfif">
+            <img src="./img/butter.jfif" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">
+              <p><input type="checkbox" class="inpItem" name="Masala dosa" value="Masala Dosa" id="MasalaDosa"><b>Masala Dosa</b></p><br><p>Quantity :<input type="number" id="inpQuantity"></p>
+              <p><button class="addOrder">AddItem</button></p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="./img/butter.jfif">
+            <img src="./img/butter.jfif" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">
+              <p><input type="checkbox" class="inpItem" name="Onion dosa" value="Onion Dosa" id="OnionDosa"><b>Onion Dosa</b></p><br><p>Quantity :<input type="number" id="inpQuantity"></p>
+              <p><button class="addOrder">AddItem</button></p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="./img/butter.jfif">
+            <img src="./img/butter.jfif" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">
+              <p><input type="checkbox" class="inpItem" name="Butter dosa" value="Butter Dosa" id="butterDosa"><b>Butter Dosa</b></p><br><p>Quantity :<input type="number" id="inpQuantity"></p>
+              <p><button class="addOrder">AddItem</button></p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <a target="_blank" href="./img/butter.jfif">
+            <img src="./img/butter.jfif" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc">
+              <p><input type="checkbox" class="inpItem" name="Plain dosa" value="Plain Dosa" id="plainDosa"><b>Plain Dosa</b></p><br><p>Quantity :<input type="number" id="inpQuantity"></p>
+              <p><button class="addOrder">AddItem</button></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+</div>
+    <footer>location</footer>
+    
+</body>
+</html>

@@ -1,0 +1,6 @@
+
+ the content append to next line
+ [{"id":7,"bookTitle":"The Faults in our Stars","price":120,"author":"John Green"}]
+JSON.stringify(obj)[{"id":7,"bookTitle":"The Faults in our Stars","price":120,"author":"John Green"}]
+ hi hacbajkbdcjkbdj ci l  o  
+ [{"id":7,"bookTitle":"The Faults in our Stars","price":120,"author":"John Green"}] 

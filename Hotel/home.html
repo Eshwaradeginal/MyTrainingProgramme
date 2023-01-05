@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jslib.min.js"></script>
+    <script src="./hotel.js"></script>
+</head>
+
+<script>
+    localStorage.setItem("Set Dosa","50");
+    localStorage.setItem("Masala Dosa","60");
+    localStorage.setItem("Onion Dosa","70");
+    localStorage.setItem("Butter Dosa","80");
+    localStorage.setItem("Plain Dosa","30");
+    localStorage.setItem("Open Dosa","60");
+    
+    function onSignIn(){
+        const person = {
+                name: $("#uName").val(),
+                phno: $("#uPhno").val(),
+                adress:$("#uAddress").val()
+            };
+
+        window.localStorage.setItem('user', JSON.stringify(person));
+        alert("signinsucsss");
+
+
+
+        // const name=$("#uName").val();
+        // const phno=$("#uPhno").val();
+        // const adres=$("#uAddress").val();
+        // console.log(name,phno,adres);
+        // localStorage.setItem("Car", 90);
+        //localStorage.setItem(name,phno,adres);
+  
+    }
+
+   function init(){
+       
+        $("#SignIn").click(onSignIn);
+        //$("#Cancel").click(onCancel);
+    }
+
+    $(document).ready(init);
+</script>
+
+<body>
+    <h1>Hotel</h1>
+    <hr>
+
+    <div>
+        <p><input type="text" id="uName" placeholder="User Name"></p>
+        <p><input type="text" id="uPhno" placeholder="User Phno"></p>
+        <p><input type="text" id="uAddress" placeholder="User Adress"></p>
+        <p>
+            <button id="SignIn">SignIn</button>
+            <button id="Cancel">cancel</button>
+        </p>
+    </div>
+    
+</body>
+</html>
