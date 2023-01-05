@@ -1,0 +1,7 @@
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\bin\Debug\BasicsCSharp.exe.config
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\bin\Debug\BasicsCSharp.exe
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\bin\Debug\BasicsCSharp.pdb
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\obj\Debug\BasicsCSharp.csprojAssemblyReference.cache
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\obj\Debug\BasicsCSharp.csproj.CoreCompileInputs.cache
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\obj\Debug\BasicsCSharp.exe
+D:\Starmark-training\dotNet Programme\CompleteDotNetTraining\BasicsCSharp\obj\Debug\BasicsCSharp.pdb

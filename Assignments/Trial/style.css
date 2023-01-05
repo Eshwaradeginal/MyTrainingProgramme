@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(236, 240, 212);
+}
+div{
+    background-color: rgb(233, 235, 213);
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+h1{
+    margin: auto;
+    padding: 15px;
+    background-color: rgb(233, 235, 213);
+    width: 100%;
+    font-size: 35px;
+    font-family: cursive;
+    display: inline-block;
+    text-align: center;
+}
+
+ul{
+        list-style-type: none;
+    }
+li, a{
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+}
+nav{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(219, 240, 233);
+    
+}
+table{
+    background-color: rgb(233, 235, 213);
+    margin: auto;
+    width:100%;
+    border: solid 2px;
+    border-radius: 10px;
+    table-layout: fixed;
+
+}
+th{
+    text-align: center;
+    background-color: rgb(253, 234, 151);
+}
+td:nth-child(){
+    background-color: lightsalmon
+}
+h2{
+    text-align: center
+}
+button{
+    color: rgb(46, 20, 20);
+    width: auto;
+    font-size: 25px;
+}

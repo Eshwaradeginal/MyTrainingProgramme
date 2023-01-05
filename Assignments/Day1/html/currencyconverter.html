@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <h1>Currency Convertor App</h1>
+    <hr>
+    <br>
+    <div>
+        Amount to Convert<br>
+        <input type="number" id="txtnumber"><br><br>
+        From : <select id="country1">
+            <option value = "US">US</option>
+            <option value = "Japan">Japan</option>
+            <option value = "Europe">Europe</option>
+        </select>
+        &nbsp;
+        To : <select id="country2">
+                <option value = "India">India</option>
+                <option value = "China">China</option>
+                <option value = "Germany">Germany</option>
+        </select>
+        <br><br>
+        <button type="submit" onclick="convert()" >Convert</button>
+        <!-- <button type="button" onclick="convert()">Reset</button> -->
+        <br><br>
+        Converted To : 
+        <label id="convertedamt"></label><br>
+    </div>
+    
+</body>
+    <script src="./corrency.js"></script>
+</html>

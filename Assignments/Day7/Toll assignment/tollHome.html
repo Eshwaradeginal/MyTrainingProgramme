@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Toll prizes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="toll.css" />
+    <script src="./jslib.min.js"></script>
+    <script src="toll.js"></script>
+</head>
+<script>
+    const expRepo=new Tollgate();
+    function createData(){
+
+        expRepo.addVehicle(new Toll("ka17eg6585","3wheeler","12/12/2022"));
+        expRepo.addVehicle(new Toll("ka17eg0786","3wheeler","13/12/2022"));
+        expRepo.addVehicle(new Toll("ka17eg0786","4wheeler","23/12/2022"));
+        expRepo.addVehicle(new Toll("ka17eg0786","4wheeler","13/12/2022"));
+        expRepo.addVehicle(new Toll("ka17eg0786","4wheeler","13/12/2022"));
+        expRepo.addVehicle(new Toll("ka17eg0786","truck","13/12/2022"));
+    }
+   
+
+     function onDisplayTable() {
+            $(".container").children("div").hide();
+            $(".container").children("div:first").show(2000);
+            const data = expRepo.getAllVehicleDetails();
+            populateData(data);
+        }
+
+    function populateData(data){
+            $("table").find("tr:gt(0)").remove();//Remove all the rows expect the first row(heading). 
+            $.each(data, (index, item)=>{
+              const row = `<tr>
+                    <td>${item.id}</td>
+                    <td>${item.vehileNo}</td>
+                    <td>${item.VehicleType}</td>
+                     `;
+               $("table").append(row);        
+            })
+        }
+   
+    function dateString(date){
+            return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+        }
+
+
+    function addData(){
+        alert("jhbsvjhbv");
+        const vNo =$("#vno").val();
+        
+        const vType =$("#vtype").val;
+        const vDate =new Date($("#vdate").val());
+        console.log(vNo,vType,vDate);
+        expRepo.addVehicle(new Toll(vNo,vType,vDate));
+        alert("added");
+
+
+    }
+
+    function init(){
+        createData();
+        $("#showData").click(onDisplayTable)
+        $("#addVehicle").click(addData);
+    }
+
+    $(document).ready(init);
+</script>
+
+<body>
+    <div>
+        <h1>Toll Plaza,Nelamangala</h1>
+    </div>
+    <hr>
+    <div class="nav-div">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Add Vehicle</a></li>
+                <li><a href="#">View All</a></li>
+                <li><a href="#">Search By Vehicles</a></li>
+            </ul>
+        </nav>
+    </div>
+    <hr>
+
+    <!-- -----------------ADD Vehicles----------------------- -->
+     <div ID="container">
+        <div>
+            <p><input type="text" id="vehicleNo" placeholder="Enter Vehicle No"></p>
+            <p><select name="sub" id="sub">
+                <option value="three-wheelers">
+                    3 Wheeler
+                </option>
+                <option value="four-Wheelers">
+                    4 wheelers
+                </option>
+                <option value="trucks">
+                  Trucks
+                </option>
+              </select></p>
+            <p><input type="date" id="vehicledate" placeholder="date"></p>
+            <p><button id="addVehicle">ADD VEHICLE</button></p>
+        </div>
+    </div>
+    <hr>
+
+    <!-- <---------------------------Statistics---------------------
+    <div>
+        <h1>Statistics</h1>
+    </div>
+    <table border="1">
+        <tr>
+            <th>Sl no</th>
+            <th>Type Of Vehicle</th>
+            <th>Total Amount</th>
+            <th>Vehicles</th>
+        </tr>
+    </table>
+    <hr> -->
+
+    <!-- --------------------Display Vehicles-------------------- -->
+    <!-- <p>
+        <h1>All Vehicle Details</h1>
+    </p>
+    <table>
+            <tr>
+                    <th>Sl no</th>
+                    <th>Date</th>
+                    <th>Type Of Vehicle</th>
+                    <th>Vehicle No</th>
+                    <th>Amount</th>
+                    
+            </tr>
+
+    </table> -->
+
+    <!-- -------------------------Searchby vehicles-------------------- -->
+    <!-- <p>
+        <h1>Search By Vehicles</h1>
+    </p>
+    <div>
+        <p><select name="sub" id="sub">
+            <option value="three-wheelers">
+                3 Wheeler
+            </option>
+            <option value="four-Wheelers">
+                4 wheelers
+            </option>
+            <option value="trucks">
+              Trucks
+            </option>
+          </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="date" id="vehicleDate" placeholder="Enter Vehicle Date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button id="searchBytype">Search</button>
+        </p>
+    </div> -->
+</body>
+</html>
