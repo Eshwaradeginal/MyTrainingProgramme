@@ -1,0 +1,21 @@
+body{
+    background-color: beige;
+}
+#card{
+    border-radius: 50%;
+    max-width: 50%;
+}
+#card2{
+    box-shadow: 15px 15px red;
+    opacity: 85%;
+    width: 35%
+}
+
+
+#maindiv{
+    width: 80%;
+    background-color: white;
+    box-pack: 0 4px 8px 0 lightblue;
+    margin-bottom: 25px;
+    font-size: 25px;
+}

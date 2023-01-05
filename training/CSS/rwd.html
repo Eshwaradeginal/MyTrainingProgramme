@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: column-reverse;
+            align-items: baseline;
+            text-align: center;
+            padding: 10px;
+            flex-flow: row wrap;
+            background-color: bisque;
+        }
+        .item{
+            /* width: 200px; */
+            border:2px solid blue;
+            flex-grow: 3;
+            flex-basis: 100px;
+            margin: 10px;
+        }
+
+
+
+        /* Grid */
+        .grid-container {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background-color: #2196F3;
+                padding: 10px;
+            }
+.grid-item {
+  background-color: rgb(212, 235, 183);
+  border: 1px solid rgba(233, 216, 216, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.container2{
+    display: grid;
+    column-gap: 50px;
+}
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" style="flex-shrink:0;">
+                Item 1
+        </div>
+        <div class="item">
+                Item 2
+        </div>
+        <div class="item" style="flex-grow:2;">
+                Item 3
+        </div>
+        <div class="item">
+                Item 4
+        </div>
+    </div>
+    <hr><hr>
+    <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>  
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>  
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>  
+          </div>
+
+    <div class="container2">
+        <div class="row">
+            <div class="col-4">
+                <h3>Main menu</h3> 
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <p class="col-5">child content</p>
+                    <p class="col-2">c2</p>
+                    <p class="col-4">c3</p>
+
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="./jquery.min.lib.js"></script>
+</head>
+<script>
+    $().ready(function(){
+            // $("#divDisplay").fadeToggle(2000);
+            $("#divFirst").slideUp(2000);
+            $("a").click(function(){
+                $("#divFirst").slideDown(2000);
+            })
+            $("button").click(function(event){
+                event.preventDefault();
+                const obj = {};
+                obj.name = $("#name").val();
+                obj.email = $("#email").val();
+                obj.salary = $("#salary").val();
+                $("#divDisplay").text(JSON.stringify(obj));
+                $("#divDisplay").fadeToggle(2000);
+            })
+        });
+
+</script>
+<body>
+        <div>
+
+                <a href="#">Display</a>
+            </div>
+    
+        <div  id="divFirst">
+                <h1>Registration form</h1>
+                <hr>
+                
+                <div>
+                    <p><input type="text" placeholder="Enter your Name" id="name"></p>
+                </div>
+                <div>
+                    <p><input type="email" placeholder="Enter your email" id="email"></p>
+                </div>
+                <div>
+                        <p><input type="text" min="20000" max="100000" id="salary" placeholder="Enter Your Salary" width="100%"></p>
+                </div>
+                <div>
+                        <button type="submit">Display Details</button>
+                </div>
+        
+            </div>
+            <div id="divDisplay"></div>
+        
+
+</body>
+</html>

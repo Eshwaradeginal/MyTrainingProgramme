@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function showDate(){
+        alert(new Date());
+        const selectdate=createDate();
+        document.getElementById("pDisplay").innerHTML=selectdate;
+    }
+    function createDate(){
+        const y=parseInt(prompt("enter year"));
+        const m=parseInt(prompt("enter month 0 to 11"));
+        const d=parseInt(prompt("enter date"));
+        return new Date(y,m,d);
+    }
+    function displayDate(date){
+        const div=document.createElement("div");
+        const year=date.getFullYear();
+        const month=date.getMonth();
+        const Day=date.getDate();
+        const hr=date.getHours();
+        const min=date.getMinutes();
+        const sec=date.getSeconds();
+        div.innerHTML=`Year: ${year} <br>
+        Day: ${Day} <br>
+        hr: ${hr} <br>
+        month: ${month} <br>
+        min: ${min} <br>
+        sec: ${sec} <br>`;
+        document.body.appendChild(div);
+        
+
+    }
+    function inpdate(){
+        const txtdate=new Date(document.getElementById("txtdate").value);
+        return displayDate(txtdate);
+    }
+ 
+</script>
+<body>
+    <div><h1>Date and time</h1></div><hr>
+
+    <div>
+        <input type="date" id="txtdate">
+        <button type="Date" onclick="showDate()">Showdate</button>
+    </div>
+    <div><p id="pDisplay"></p></div><hr>
+    <div id="divarea">
+        <button onclick="inpdate()">displaydate</button>
+
+    </div>
+
+    
+</body>
+</html>

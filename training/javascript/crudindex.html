@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./crudOperation.js"></script>
+    <script src="./objectsbasics.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementById("id").value =obj.id;
+            document.getElementById("name").value =obj.name;
+            document.getElementById("city").value =obj.city;
+            document.getElementById("salary").value =obj.salary;
+
+            document.getElementById("empid").value =empobj.empid;
+            document.getElementById("empname").value =empobj.empname;
+            document.getElementById("empcity").value =empobj.empcity;
+            document.getElementById("empsalary").value =empobj.empsalary;
+
+        })
+        // load is an event it triggered when window get loaded
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Crud Operations</h1>
+    </div>
+    <div>
+        <input type="text" id="books" placeholder="enter book name">
+        <button type="submit" onclick="onaddItems()">Add Item</button>
+        <!-- <button type="submit" onclick="deleteItems()">Remove</button>
+        <button type="submit" onclick="updateItems()">Edit</button> -->
+                
+                        
+    </div>
+    <p id="pDisplay">
+
+        <ol id="lst"></ol>
+    </p>
+
+
+    <hr>
+    <div>
+        <p><input type="text" id="id" placeholder="id"></p>
+        <p><input type="text" id="name" placeholder="Name"></p>
+        <p><input type="text" id="city" placeholder="city"></p>
+        <p><input type="text" id="salary" placeholder="salary"></p>
+        <p>
+            <button>save changes</button>
+            <button>clear</button>
+        </p>
+
+    </div>
+
+    <div>
+            <p><input type="text" id="empid" placeholder="id"></p>
+            <p><input type="text" id="empname" placeholder="Name"></p>
+            <p><input type="text" id="empcity" placeholder="city"></p>
+            <p><input type="text" id="empsalary" placeholder="salary"></p>
+            <p>
+                <button>save changes</button>
+                <button>clear</button>
+            </p>
+    
+        </div>
+   
+    
+</body>
+<script>
+    const populate=function(){
+        let ol=document.getElementById("lst");
+        ol.innerHTML ="";
+        const data=getAll();
+        for(let i=0;i<data.length;i++){
+            //const elem="<li>"+data[i]+ "</li>";
+            const elem=`<div class="booklist"><h2>
+                            ${data[i]} 
+                                <Button onclick="onDelete(${i})">Delete</Button>
+                                <Button onclick="onUpdate(${i})">Update</Button> 
+                            </h2>  
+                        </div>`;
+            ol.innerHTML+=elem;
+        }
+    }
+    
+    const onDelete=function(id){
+        
+        deleteItems(id);
+        populate();
+
+    }
+    const onUpdate=function(id){
+        const data=prompt("enter new name");
+        updateItem(id,data);
+        populate();
+
+    }
+    //call add items
+    const onaddItems=function(){
+        const name=document.getElementById("books").value;
+        
+        addItems(name); 
+        alert("book added Succesfully")
+        populate();
+    }
+    document.getElementById("pDisplay").innerText = myBooks;
+    
+
+</script>
+</html>

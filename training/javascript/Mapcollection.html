@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    let data=new Map();
+
+    function onLogin(){
+        const id=document.getElementById("txtLogin").value;
+        const pwd=document.getElementById("txtPwd").value;
+        signIn(id,pwd);
+    }
+
+    function signUp(uname,pwd){
+        if(data.has(uname)){
+            alert("data already exists");
+        }
+        data.set(uname,pwd)
+    }
+
+    function signIn(uname,password){
+        if(!data.has(uname)){
+            alert("data not provided");
+        
+        }else{
+            const sucess="Sign in sucussed";
+            const fail="password is in correct";
+            if(data.get(uname) == password){
+                alert(sucess);
+            }else{
+                alert(fail);
+            }
+        }
+    }
+    function registerUser(){
+        const id=document.getElementById("txtNewUser").value;
+        const pwd=document.getElementById("txtNewPwd").value;
+        signUp(id,pwd);
+   
+    }
+</script>
+<body>
+    <nav>
+        <a href="#">New User? Sign up</a>
+        <a href="#">Sign in</a>
+        <span id="spRegisteredUsers"></span>
+    </nav>
+    <div>
+        <h2>Sign in Page</h2>
+        <hr>
+        <p>UserName: <input type="text" id="txtLogin" placeholder="UserName"/></p>
+        <p>Password:<input type="password" id="txtPwd" placeholder="UserName"/></p>
+        <p>
+            <button onclick="onLogin()">Login</button>
+        </p>
+    </div>
+    
+    <div>
+        <h2>Registration Page</h2>
+        <hr>
+        <p>UserName: <input type="text" id="txtNewUser" placeholder="UserName"/></p>
+        <p>Password:<input type="password" id="txtNewPwd" placeholder="UserName"/></p>
+        <p>
+            <button onclick="registerUser()">Register</button>
+        </p>
+    </div>
+    <p id="pMessage" style="color:red">
+       
+    </p>
+</body>
+</html>

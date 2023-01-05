@@ -1,0 +1,44 @@
+
+    body{
+    background-color: rgb(226, 208, 197);
+    color:black;
+    font-family: cursive;
+}
+h1{
+    padding: 50px;
+    background-color: rgb(245, 233, 229);
+    font-size: 38pt;
+    text-align: center
+}
+
+ul{
+    list-style-type: none;
+}
+li, a{
+    display: inline-block;
+    background-color: rgb(250, 228, 195);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none
+}
+a:hover{
+    background-color: brown;
+    color:whitesmoke;
+}
+table{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 25px;
+    margin: auto;
+    width: 98%;
+    /* border-block-start-color: red;
+    border-block-end-color: aquamarine; */
+    table-layout: auto;
+    height: auto;
+    
+
+}
+h2{
+    text-align: center;
+}
+

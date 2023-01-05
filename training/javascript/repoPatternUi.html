@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function createRow(emp){
+            const row=document.createElement("tr");
+            row.innerHTML=`<td>${emp.empid}</td>
+            <td>${emp.empname}</td>
+            <td>${emp.empcity}</td>
+            <td>${emp.empsalary}</td> `;
+            return row;
+        }
+        window.addEventListener('load',function(){
+            // const table=document.querySelector('#tableRecords');
+            // for (const emp of data) {
+            //     let row=createRow(emp);
+            //     table.appendChild(row);
+                
+            // }
+            populate();
+
+        })
+        function onEdit(){
+            const id=prompt("enter id to edit");
+            try{
+
+                const getemp=instance.getEmployee(id);
+                document.getElementById("txtid").value = getemp.empid;
+                document.getElementById("txtname").value = getemp.empname;
+                document.getElementById("txtcity").value = getemp.empcity;
+                document.getElementById("txtsalary").value = getemp.empsalary;
+
+            }catch(ex){
+                alert(ex);
+            }
+            
+        }
+        function onAdd(){
+            const id=    document.getElementById("txtid").value;
+            const name=  document.getElementById("txtname").value;
+            const city=  document.getElementById("txtcity").value;
+            const salary=document.getElementById("txtsalary").value;
+            const emp=new Employee(id,name,city,salary);
+            instance.getEmployeeAdd(emp);
+            alert("added");
+            populate();
+
+
+        }
+        function onDelete(){
+            const id=prompt("enter id to edit");
+            try{
+
+                const getemp=instance.deleteEmployee(id);;
+                // document.getElementById("txtid").value = getemp.empid;
+                // document.getElementById("txtname").value = getemp.empname;
+                // document.getElementById("txtcity").value = getemp.empcity;
+                // document.getElementById("txtsalary").value = getemp.empsalary;
+                alert("deleted");
+                populate();
+
+            }catch(ex){
+                alert(ex);
+            }
+            
+        }
+
+        function populate(){
+                //get the table element....
+                const table = document.querySelector("#tableRecords");
+                //get the heading element....
+                const firstRow = document.querySelector("#theading");
+                table.innerHTML = "";//remove all the elements
+                table.appendChild(firstRow);//add the heading
+                for(const emp of data){//iterate thro the array
+                    let row = createRow(emp);//Create row to the table
+                    table.appendChild(row);//add the row to the table
+                }
+            }
+
+    function onsaveChanges(){
+            const id=    document.getElementById("txtid").value;
+            const name=  document.getElementById("txtname").value;
+            const city=  document.getElementById("txtcity").value;
+            const salary=document.getElementById("txtsalary").value;
+            const emp=new Employee(id,name,city,salary);
+            
+                try {
+                    instance.updateEmployee(emp);
+                    populate();
+                } catch (error) {
+                    alert(error)
+                }
+            }
+            
+
+
+    </script>
+    <script src="empRepoPattern.js"></script>
+</head>
+<body>
+    <center><h1>Emplyee Monitoring System</h1></center>
+    <nav>
+        <a href="#" onclick="onAdd()">Add</a>
+        <a href="#" onclick="onEdit()">Edit</a>
+        <a href="#" onclick="onDelete()">Delete</a>
+    </nav>
+
+    <div>
+        <h2>Employee lists</h2>
+        <hr>
+        <table id="tableRecords" width="100%">
+        <tr id="theading">
+            <th>Emp Id</th>
+            <th>Emp Name</th>
+            <th>Emp City</th>
+            <th>Emp Salary</th>
+        </tr>
+
+        </table>
+
+    </div>
+    <div>
+        <p>Employee id:<input id="txtid" type="number"></p>
+        <p>Employee Name:<input id="txtname" type="text"></p>
+        <p>Employee city :<input id="txtcity" type="text"></p>
+        <p>Employee Salary<input id="txtsalary" type="text"></p>
+        <p><input id="SaveChange" type="button" value="Save changes" onclick="onsaveChanges()">
+            <input id="SaveChange" type="button" value="Add" onclick="onAdd()"></p>
+    </div>
+    <div></div>
+    
+</body>
+</html>
