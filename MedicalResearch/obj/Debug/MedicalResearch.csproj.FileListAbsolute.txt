@@ -1,0 +1,7 @@
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\bin\Debug\MedicalResearch.exe.config
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\bin\Debug\MedicalResearch.exe
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\bin\Debug\MedicalResearch.pdb
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\obj\Debug\MedicalResearch.csprojAssemblyReference.cache
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\obj\Debug\MedicalResearch.csproj.CoreCompileInputs.cache
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\obj\Debug\MedicalResearch.exe
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\MedicalReasearchHackathon\MedicalResearch\MedicalResearch\obj\Debug\MedicalResearch.pdb

@@ -1,0 +1,29 @@
+﻿jaundis{
+Fever.
+Chills.
+Abdominal pain.
+Flu-like symptoms.
+Change in skin color.
+Dark-colored urine and/or clay-colored stool.
+}
+
+Maleria{
+fever and flu-like illness, including shaking chills, headache, muscle aches, and tiredness. 
+}
+
+covid{
+Fever
+Cough
+Tiredness
+Muscle aches
+Chills
+Sore throat
+Runny nose
+Headache
+Chest pain
+Pink eye (conjunctivitis)
+Nausea
+Vomiting
+Diarrhea
+Rash
+}
