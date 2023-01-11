@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace MedicalResearch
         void AddNewDisease(Patient cst);
         void AddNewSymptoms(Patient cst);
 
-        void CheckDisease { get; set; }
+        //void CheckDisease { get; set; };
         Patient[] GetAllPatient();
 
     }
@@ -24,6 +24,7 @@ namespace MedicalResearch
         private ArrayList ListOfDises = new ArrayList();
         private ArrayList ListOfSymptoms = new ArrayList();
 
+        //public void CheckDisease { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void AddNewDisease(Patient cst)
         {
@@ -34,6 +35,11 @@ namespace MedicalResearch
         {
             ListOfSymptoms.Add(cst);
         }
+
+        public Patient[] GetAllPatient()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class Patient
@@ -41,26 +47,27 @@ namespace MedicalResearch
         public string PatientName { get; set; }
         public string PatientDescription { get; set; }
         public int PatientSymptoms { get; set; }
+        public Disease patientDisease { get;}
+        public Severity patientSeverity{get;}
     }
 
 
     enum Disease { Maleria, Covid, Jaundis }
-    enum Symptoms
+    enum Severity
     {
-        highfever, headache, muscleaches, tiredness,
+        high,medium,low
     }
 
 
 
     class UIMedical
     {
-        public static medicalDb msg = null;
+        public static Patient[] addlist = null;
+        //ArrayList addlist = new ArrayList();
 
         public static void DisplayMenu()
         {
-            Console.WriteLine("Enter the Size : ");
-            int size = Convert.ToInt32(Console.ReadLine());
-            msg = new medicalDb(size);
+        
             bool process = true;
 
             do
@@ -87,7 +94,7 @@ namespace MedicalResearch
                     AddDisease();
                     break;
                 case 2:
-                    AddSymptoms();
+                    //AddSymptoms();
                     break;
                 case 3:
                     CheckDisease();
@@ -105,8 +112,8 @@ namespace MedicalResearch
 
         private static void AddDisease()
         {
-
-            Console.Write("Enter the Name of patient : ");
+            
+            Console.Write("Enter the Name Disease : ");
             string name = Console.ReadLine();
             Console.Write("Enter the Symptoms : ");
             string symptoms = Console.ReadLine();
@@ -119,20 +126,20 @@ namespace MedicalResearch
                 PSymptoms = symptoms,
                 PDescription = Description,
             };
-            msg.AddNewDisease(ctd);
+            //addlist.Add(new Patient {ctd});
             Console.WriteLine("Disease Added Succesfully\n");
         }
 
-        private static void CheckDisease(string symptoms)
-        {
-            string[] s = symptoms.Split(' ');
-            for (int i = 0; i < s.Length; i++)
-            {
-                foreach (int i in Enum.GetValues(typeof(Symptoms)))
-                    Console.WriteLine(i);
-            }
+        //private static void CheckDisease(string symptoms)
+        //{
+        //    string[] s = symptoms.Split(' ');
+        //    for (int i = 0; i < s.Length; i++)
+        //    {
+        //        foreach (int i in Enum.GetValues(typeof(Symptoms)))
+        //            Console.WriteLine(i);
+        //    }
 
-        }
+        //}
 
         static IDataComponent component = new MedicalDatabase();
         static void Main(string[] args)
