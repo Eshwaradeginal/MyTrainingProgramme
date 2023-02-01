@@ -1,0 +1,7 @@
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\bin\Debug\Ex01Collections.exe.config
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\bin\Debug\Ex01Collections.exe
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\bin\Debug\Ex01Collections.pdb
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\obj\Debug\Ex01Collections.csprojAssemblyReference.cache
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\obj\Debug\Ex01Collections.csproj.CoreCompileInputs.cache
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\obj\Debug\Ex01Collections.exe
+D:\Starmark-training\dotNet Programme\CollectionFramework\CollectionFramework\Ex01Collections\obj\Debug\Ex01Collections.pdb
