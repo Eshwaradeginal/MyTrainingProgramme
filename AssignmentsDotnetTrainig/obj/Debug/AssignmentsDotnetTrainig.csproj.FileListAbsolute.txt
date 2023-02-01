@@ -1,0 +1,7 @@
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\obj\Debug\AssignmentsDotnetTrainig.csprojAssemblyReference.cache
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\obj\Debug\AssignmentsDotnetTrainig.csproj.CoreCompileInputs.cache
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\bin\Debug\AssignmentsDotnetTrainig.exe.config
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\bin\Debug\AssignmentsDotnetTrainig.exe
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\bin\Debug\AssignmentsDotnetTrainig.pdb
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\obj\Debug\AssignmentsDotnetTrainig.exe
+D:\Starmark-training\dotNet Programme\AssignmentsDotnetTrainig\AssignmentsDotnetTrainig\obj\Debug\AssignmentsDotnetTrainig.pdb
