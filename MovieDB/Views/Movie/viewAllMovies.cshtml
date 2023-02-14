@@ -1,0 +1,48 @@
+﻿@*//@model List<MoviesWebApp.MovieComponent.MVCMOVy>*@
+@model List<MoviesWebApp.MovieComponent.MVCMOVy>
+
+@{
+    ViewBag.Title = "viewAllMovies";
+}
+
+<div><h1>All Movies</h1></div>
+<div class="container">
+    <div class="row">
+
+
+        @foreach (var movie in Model)
+        {
+            if (movie.Image != null)
+            {
+
+            <div class="col-md-4">
+                <div class="">
+                    
+                    <img src="@movie.Image" height="180px" width="180px" />
+
+                </div>
+                <div>
+                    <p><h3>@movie.MOVTITLE</h3></p>
+                    @*<p>@movie.ACTNAME</p>
+                    <p>@movie._director.DIRNAME</p>*@
+                    <div>
+
+                        <p>@movie.MOVLANG</p>
+                        <p>@movie.MOVYEAR</p>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            }
+            else
+            {
+
+            }
+        }
+
+
+    </div>
+

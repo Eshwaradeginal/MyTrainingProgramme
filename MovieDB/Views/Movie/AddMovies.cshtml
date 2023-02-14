@@ -1,0 +1,46 @@
+﻿@model MoviesWebApp.MovieComponent.MovieEntity
+
+@{
+    ViewBag.Title = "AddMovies";
+}
+
+<div class="container">
+
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            <div>
+                Actor Name @Html.EditorFor((m) => m._actor.ACTNAME, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                <div>
+                    Gender
+                </div>
+                Male
+                @Html.RadioButtonFor(m => m._actor.ACTNAME, "Male")
+                Female
+                @Html.RadioButtonFor(m => m._actor.ACTNAME, "Female")
+            </div>
+            <div>
+                Director Name @Html.EditorFor((m) => m._director.DIRNAME, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                Movie Title @Html.EditorFor((m) => m._movies.MOVTITLE, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                Movie Year @Html.EditorFor((m) => m._movies.MOVYEAR, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                Movie Language @Html.EditorFor((m) => m._movies.MOVLANG, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                Actor Role @Html.EditorFor((m) => m._moviecast.ROLE, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success">Add New Movie</button>
+            </div>
+        }
+    </div>
+
+</div>
+
