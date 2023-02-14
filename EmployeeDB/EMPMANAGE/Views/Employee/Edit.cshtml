@@ -1,0 +1,46 @@
+﻿@model Employee.DataComponent.MVCEmployee
+
+
+@{
+    ViewBag.Title = "Index";
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "divArea"
+    };
+}
+
+@{
+    var list = ViewData["DeptList"] as List<SelectListItem>;
+}
+<div class="container">
+    <div class="row">
+        <h2>Editing Details of @Model.EmpName</h2>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <div class="colmd-7">
+                <div>
+                    ID : @Html.DisplayFor((m) => m.Empid, new { @class = "form-control", placeholder = "ID" })
+                    @Html.HiddenFor((m) => m.Empid, new { @class = "form-control", placeholder = "ID" })
+                </div>
+                <br />
+                <div>
+                    Name : @Html.EditorFor((m) => m.EmpName, new { @class = "form-control", placeholder = "Enter the Employee Name" })
+                </div>
+                <br />
+                <div>
+                    Salary : @Html.EditorFor((m) => m.EmpSalary, new { @class = "form-control", placeholder = "Enter the Employee Salary" })
+                </div>
+                <br />
+                <div>
+                    dept name : @Html.DropDownListFor((m) => m.DeptId, list, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-success">Update Employee</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

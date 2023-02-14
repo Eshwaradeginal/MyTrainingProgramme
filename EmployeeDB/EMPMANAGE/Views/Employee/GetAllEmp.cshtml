@@ -1,0 +1,33 @@
+﻿@model List<Employee.DataComponent.MVCEmployee>
+
+
+
+<div>
+    <table class="table-bordered ">
+        <tr>
+            <td>Empid</td>
+            <td>EmpName</td>
+            <td>EmpAddress</td>
+            <td>EmpSalary</td>
+            <td>
+              Options
+            </td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Empid</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpAddress</td>
+            <td>@item.EmpSalary</td>
+            <td>
+                @Ajax.ActionLink("Edit", "Edit", new { id = item.Empid }, null, new { @class = "btn btn-info" })
+                @Ajax.ActionLink("X", "Removing", new { id = item.Empid }, null, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+        }
+    </table>
+</div>
+
+

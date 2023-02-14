@@ -1,0 +1,43 @@
+﻿@model SampleMVC.DataComponent.CarInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+@if (ViewBag.message != null)
+{
+    <h1 style="color:red"> @ViewBag.Message</h1>
+
+}
+else
+{
+    <h1> View Details of @Model.Model</h1><hr />
+    using (Html.BeginForm())
+    {
+        <div>
+            CarId &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.EntryId, new { @class = "form-control" })
+        </div>
+        <div>
+            Car Brand &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.BrandName, new { @class = "form-control" })
+        </div>
+        <div>
+            Car Model &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.Model, new { @class = "form-control" })
+        </div>
+        <div>
+            Body Type &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.BodyType, new { @class = "form-control" })
+        </div>
+        <div>
+            Engine &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.Engine, new { @class = "form-control" })
+        </div>
+        <div>
+            No of Seats &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.Capacity, new { @class = "form-control" })
+        </div>
+        <div>
+            Fuel Type &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.FuelType, new { @class = "form-control" })
+        </div>
+        <div>
+            Price &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;:@Html.EditorFor(mod => mod.Price, new { @class = "form-control" })
+        </div>
+        <div><button type="submit" class="btn btn-success">Modify Details</button></div>
+    }
+}
+

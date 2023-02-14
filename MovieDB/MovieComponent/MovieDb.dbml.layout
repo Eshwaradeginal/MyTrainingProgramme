@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MovieDb">
+  <DataContextMoniker Name="/MovieDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e06bd975-b1b5-4808-8a33-051556567828" absoluteBounds="3.5, 6.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/MovieDbDataContext/MVCACTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49dffbdb-2552-4bde-bff1-8192b9c5138c" absoluteBounds="3.515, 6.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="211d9ac7-0f5f-403c-b4b0-a891dfb31768" absoluteBounds="0.75, 3.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MovieDbDataContext/MVCDIRECTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cf48442-33fb-428b-9e34-bc1e6771dd1e" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="203dfbe3-64fd-4931-9028-aafbeba21122" absoluteBounds="6.25, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/MovieDbDataContext/MVCMOVIECAST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09af2fdb-3851-4fc3-96da-7fd47aaec976" absoluteBounds="6.265, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af9932bb-429f-437a-9354-eb6bc2bfeb62" absoluteBounds="6.25, 3.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MovieDbDataContext/MVCMovieImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e24c933-d8cd-4f46-803c-eb894c352598" absoluteBounds="6.265, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.59375 : 6.5); (3.59375 : 1.44314697265625); (6.25 : 1.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MovieDbDataContext/MVCACTOR/MVCACTOR_MVCMOVIECAST" />
+      <nodes>
+        <classShapeMoniker Id="e06bd975-b1b5-4808-8a33-051556567828" />
+        <classShapeMoniker Id="203dfbe3-64fd-4931-9028-aafbeba21122" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7e9cb783-86e3-49aa-8a23-87a3578b56c7" absoluteBounds="3.75, 3.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/MovieDbDataContext/MVCMOVy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f98ce69-8337-4217-a302-157dd2768d27" absoluteBounds="3.7649999999999997, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.75 : 3.5); (4.75 : 1.82097295898438); (6.25 : 1.82097295898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MovieDbDataContext/MVCMOVy/MVCMOVy_MVCMOVIECAST" />
+      <nodes>
+        <classShapeMoniker Id="7e9cb783-86e3-49aa-8a23-87a3578b56c7" />
+        <classShapeMoniker Id="203dfbe3-64fd-4931-9028-aafbeba21122" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 4.47199625651042); (6.25 : 4.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MovieDbDataContext/MVCMOVy/MVCMOVy_MVCMovieImage" />
+      <nodes>
+        <classShapeMoniker Id="7e9cb783-86e3-49aa-8a23-87a3578b56c7" />
+        <classShapeMoniker Id="af9932bb-429f-437a-9354-eb6bc2bfeb62" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.47199625651042); (3.51041666666667 : 4.47199625651042 : JumpStart); (3.67708333333333 : 4.47199625651042 : JumpEnd); (3.75 : 4.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MovieDbDataContext/MVCDIRECTOR/MVCDIRECTOR_MVCMOVy" />
+      <nodes>
+        <classShapeMoniker Id="211d9ac7-0f5f-403c-b4b0-a891dfb31768" />
+        <classShapeMoniker Id="7e9cb783-86e3-49aa-8a23-87a3578b56c7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

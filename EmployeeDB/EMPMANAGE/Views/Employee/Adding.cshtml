@@ -1,0 +1,61 @@
+﻿@model Employee.DataComponent.MVCEmployee
+
+@{
+    ViewBag.Title = "Index";
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "divArea"
+    };
+}
+@{
+    
+    var empObj = new Employee.DataComponent.EmployeeDataComponent();
+    var allDepts = empObj.GetAllDepts();
+    var deptList = new List<SelectListItem>();
+    foreach (var department in allDepts)
+    {
+        var dept = new SelectListItem { Text = department.DeptName, Value = department.DeptId.ToString() };
+        deptList.Add(dept);
+    }
+}
+@{
+    var list = ViewData["DeptList"] as List<SelectListItem>;
+}
+<div class="container">
+    <div class="row">
+        <h2>Add new Employee Details</h2>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <div class="colmd-7">
+                @*<div>
+                        ID : @Html.EditorFor((m) => m.EmployeeId, new { @class = "form-control", placeholder = "ID" })
+                    </div>
+                    <br />*@
+                <div>
+                    Name : @Html.EditorFor((m) => m.EmpName, new { @class = "form-control", placeholder = "Enter the Employee Name" })
+                    @Html.ValidationMessageFor(m => m.EmpName)
+                </div>
+
+                <br />
+                <div>
+                    Salary : @Html.EditorFor((m) => m.EmpSalary, new { @class = "form-control", placeholder = "Enter the Employee Salary" })
+                    @Html.ValidationMessageFor(m => m.EmpSalary)
+                </div>
+                <div>
+                   Address : @Html.EditorFor((m) => m.EmpAddress, new { @class = "form-control", placeholder = "Enter the Address" })
+                    @Html.ValidationMessageFor(m => m.EmpAddress)
+                </div>
+                <br />
+                <div>
+                    dept name : @Html.DropDownListFor((m) => m.DeptId, list, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-success">Add Employee</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

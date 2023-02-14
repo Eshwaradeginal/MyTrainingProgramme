@@ -1,0 +1,20 @@
+﻿@{
+    var options = new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "divArea"
+
+
+    };
+}
+
+<h1>Employees Details</h1>
+<div>
+    <nav>
+        @Html.ActionLink("AllEmployee", "GetAllemp", options, new { @class = "btn btn-default" })
+        @Html.ActionLink("ADD Employee", "Adding", options, new { @class = "btn btn-default" })
+    </nav>
+</div>
+<div id="divArea">
+    defaultdata
+</div>

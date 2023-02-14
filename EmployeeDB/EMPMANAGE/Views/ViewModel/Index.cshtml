@@ -1,0 +1,15 @@
+﻿@model EmployeeManagement.ViewModel.Viewmodel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.EditorFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+        <button>Submit</button>
+    </div>
+}

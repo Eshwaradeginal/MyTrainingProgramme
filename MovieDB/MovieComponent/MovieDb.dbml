@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="3309" Class="MovieDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.171.36;Initial Catalog=3309;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="_3309ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MVCACTOR" Member="MVCACTORs">
+    <Type Name="MVCACTOR">
+      <Column Name="ACTID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACTNAME" Type="System.String" DbType="VarChar(55)" CanBeNull="true" />
+      <Column Name="ACTGENDER" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="MVCACTOR_MVCMOVIECAST" Member="MVCMOVIECASTs" ThisKey="ACTID" OtherKey="ACTID" Type="MVCMOVIECAST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MVCDIRECTOR" Member="MVCDIRECTORs">
+    <Type Name="MVCDIRECTOR">
+      <Column Name="DIRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DIRNAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="MVCDIRECTOR_MVCMOVy" Member="MVCMOVies" ThisKey="DIRID" OtherKey="DIRID" Type="MVCMOVy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MVCMOVIECAST" Member="MVCMOVIECASTs">
+    <Type Name="MVCMOVIECAST">
+      <Column Name="ACTID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MOVID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="MVCACTOR_MVCMOVIECAST" Member="MVCACTOR" ThisKey="ACTID" OtherKey="ACTID" Type="MVCACTOR" IsForeignKey="true" />
+      <Association Name="MVCMOVy_MVCMOVIECAST" Member="MVCMOVy" ThisKey="MOVID" OtherKey="MOVID" Type="MVCMOVy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MVCMovieImages" Member="MVCMovieImages">
+    <Type Name="MVCMovieImage">
+      <Column Name="MOVID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="MVCMOVy_MVCMovieImage" Member="MVCMOVy" ThisKey="MOVID" OtherKey="MOVID" Type="MVCMOVy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MVCMOVIES" Member="MVCMOVies">
+    <Type Name="MVCMOVy">
+      <Column Name="MOVID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MOVTITLE" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MOVYEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MOVLANG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIRID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="MVCMOVy_MVCMOVIECAST" Member="MVCMOVIECASTs" ThisKey="MOVID" OtherKey="MOVID" Type="MVCMOVIECAST" />
+      <Association Name="MVCMOVy_MVCMovieImage" Member="MVCMovieImages" ThisKey="MOVID" OtherKey="MOVID" Type="MVCMovieImage" />
+      <Association Name="MVCDIRECTOR_MVCMOVy" Member="MVCDIRECTOR" ThisKey="DIRID" OtherKey="DIRID" Type="MVCDIRECTOR" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

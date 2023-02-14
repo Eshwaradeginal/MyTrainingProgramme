@@ -1,0 +1,32 @@
+﻿@model List<SampleMVC.DataComponent.CarInfo>
+
+@{
+    ViewBag.Title = "cardispaly";
+}
+
+<div><h1>My Cars</h1></div><hr />   
+<div>
+    <table>
+        <tr>
+            <td>Car Id</td>
+            <td>Car Brand</td>
+            <td>Car Model</td>
+            <td>Car price</td>
+            <td>Options</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.EntryId</td>
+            <td>@item.BrandName</td>
+            <td>@item.Model</td>
+            <td>@item.Price</td>
+           
+        </tr>  
+
+        }
+    </table>
+                               
+</div>
+
+

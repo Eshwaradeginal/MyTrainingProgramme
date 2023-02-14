@@ -1,0 +1,13 @@
+﻿@model SampleMVC.Models.Student
+
+
+
+<h2>Studnet Details</h2><hr />
+                       <div>
+                           <h2>Student Id :@Model.stuId</h2>
+                           <h2>Student Name:@Model.stuName</h2>
+                           <h2>Student Studying year :@Model.stuStudying</h2>
+                           <h2>Student Address :@Model.stuAddress</h2>
+                           <h2>Student Photo :<img src="@Url.Content(@Model.stuImage)" height="180px" width="180px" /></h2>
+                       </div>
+
